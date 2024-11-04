@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
@@ -13,6 +14,12 @@
 
 /* This indention is to make it easy to move to a external file */
 
+
+/* ensure that all elements include border and padding in their total width and height */
+* {
+  box-sizing: border-box;
+}
+
 /* Import the google font */
 body {
   font-family: "Lexend", serif;
@@ -20,6 +27,67 @@ body {
   font-weight: 300;
   font-style: normal;
 }
+
+
+
+.content {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.experiences {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shelf {
+  width: 50%;
+  border-style: solid;
+  border-color: darkgray;
+  border-radius: 10px;
+  border-width: 1px;
+}
+
+
+@media screen and (max-width: 700px) {
+  .content {
+    width: 90%;
+  }
+
+  .shelf {
+    width: 100%;
+  }
+}
+
+
+.card {
+  display: flex;
+  align-items: center;
+}
+
+.card > img {
+  width: 6rem;
+  margin: 1rem;
+  transition: 1s;
+  filter: drop-shadow(2px 2px 3px #22222290);
+}
+
+.card > img:hover {
+  filter: drop-shadow(4px 4px 6px #222);
+}
+
+
+.card > p {
+  flex-grow: 1;
+  margin: 1rem;
+  padding: 1rem;
+  border-style: solid;
+  border-color: darkgray;
+  border-radius: 10px;
+  border-width: 1px;
+  box-shadow: 2px 2px 6px #22222290;
+}
+
 
 </style>
 
@@ -31,25 +99,49 @@ body {
 <!-- ##################################### -->
 
 <body>
-  <h1>Samuel Hafen</h1>
-  <img src="profile.png">
+  <div class="content">
+    <h1>Samuel Hafen</h1>
+    <img src="profile.png">
 
-  <h2>Timeline</h2>
-  <p>2004 -> Birth</p>
-  <p>2023 -> completed Apprenticeship</p>
+    <div class="experiences">
+      <div class="shelf">
+      <h2>Timeline</h2>
+      <p>2004 -> Birth</p>
+      <p>2023 -> completed Apprenticeship</p>
+    </div>
 
-  <h2>School</h2>
-  <p>Federal Diploma of Vocational Education and Training autoation technician</p>
-
-  <h2>Courses</h2>
-  <p>Leaders Course BESJ</p>
-  <p>Teamleaders Course BESJ</p>
-  <p></p>
-
-  <h2>Experience</h2>
-  <p>Apprenticeship at Syntegon</p>
-  <p>IT Support at Eztoz</p>
-  <p>Youth Worker at Ref Kirchgemeinde Neunkirch</p>
+    <div class="shelf">
+      <h2>School</h2>
+      <p>Federal Diploma of Vocational Education and Training autoation technician</p>
+    </div>
+  
+    <div class="shelf">
+      <h2>Courses</h2>
+      <div class="card">
+        <img src="leiterkurs.png" data-tilt>
+        <p>Leaders Course BESJ</p>
+      </div>
+      <div class="card">
+        <img src="leiterkurs.png" data-tilt>
+        <p>Leaders Course BESJ</p>
+      </div>
+      <div class="card">
+        <img src="leiterkurs.png" data-tilt>
+        <p>Leaders Course BESJ</p>
+      </div>
+      <p>Teamleaders Course BESJ</p>
+    </div>
+  
+    <div class="shelf">
+      <h2>Experience</h2>
+      <p>Apprenticeship at Syntegon</p>
+      <p>IT Support at Eztoz</p>
+      <p>Youth Worker at Ref Kirchgemeinde Neunkirch</p>
+    </div>
+    </div>
+    
+  </div>
+  
 
 </body>
 
